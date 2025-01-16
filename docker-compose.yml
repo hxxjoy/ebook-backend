@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+
+  backend:
+    build:
+      dockerfile: Dockerfile.dev
+    container_name: book-fiber-backend
+    ports:
+      - "9110:9110"
+    volumes:
+      - .:/app
+    networks:
+      - book-fiber-network
+
+networks:
+  book-fiber-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

@@ -1,0 +1,62 @@
+app:
+  name: "book"
+  mode: "dev"  # dev, test, prod
+  version: "1.0.0"
+  jwt_secret: "kjl-test"
+  jwt_timeout: 24h
+  page_size: 10
+  max_file_size: 50  # MB
+
+server:
+  host: "0.0.0.0"
+  port: 9110
+  read_timeout: 10s
+  write_timeout: 10s
+
+cache:
+  enabled: true
+  ttl: 10
+  clearup: 20
+  max_size: 50000
+
+database:
+  driver: "postgres"    # mysql, postgres
+  host: "195.1.1.1"
+  port: 5432
+  username: "postgres"
+  password: "test"
+  database: "book"
+  max_open_conns: 100
+  max_idle_conns: 10
+  conn_max_lifetime: 1h
+  conn_max_idle_time: 30m
+
+redis:
+  host: "192.168.56.150"
+  port: 6379
+  password: "test"
+  db: 0
+  pool_size: 100
+  min_idle_conns: 10
+  max_conn_age: 1h
+
+smtp:
+  host: "smtp.gmail.com"
+  post: 587
+  username: "test@gmail.com"
+  password: "test"
+jwt:
+  access_token_secret: "xxxxxxxxxxxx"
+  refresh_token_secret: "vvvvvvvvvvvvvv"
+  access_token_expire: 24h
+  refresh_token_expire: 8760h
+log:
+  level: "info"     # debug, info, warn, error
+  filename: "logs/app.log"
+  max_size: 100     # MB
+  max_backups: 10
+  max_age: 30       # days
+  compress: true
+  
+finnhub:
+  token: cccc
